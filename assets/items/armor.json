@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1001,
+        "name": "Coleira de Couro",
+        "type": "accessory",
+        "rarity": "common",
+        "slot": "accessory",
+        "stats": {"happiness": 2},
+        "image_path": "coleira.png",
+        "base_price": 100
+    },
+    {
+        "id": 1002,
+        "name": "Coroa Real",
+        "type": "head",
+        "rarity": "legendary",
+        "slot": "head",
+        "stats": {"happiness": 10, "power": 15},
+        "image_path": "coroa.png",
+        "base_price": 5000
+    }
+]

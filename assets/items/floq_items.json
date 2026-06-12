@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "name": "Osso Simples",
+    "type": "consumable",
+    "rarity": "common",
+    "slot": null,
+    "stats": {"happiness": 2},
+    "image_path": "",
+    "base_price": 30
+  },
+  {
+    "id": 2,
+    "name": "Bolinha de Borracha",
+    "type": "consumable",
+    "rarity": "common",
+    "slot": null,
+    "stats": {"happiness": 3},
+    "image_path": "",
+    "base_price": 40
+  },
+  {
+    "id": 3,
+    "name": "Ração Básica",
+    "type": "consumable",
+    "rarity": "common",
+    "slot": null,
+    "stats": {"happiness": 2, "power": 1},
+    "image_path": "",
+    "base_price": 50
+  },
+  {
+    "id": 4,
+    "name": "Graveto do Parque",
+    "type": "consumable",
+    "rarity": "common",
+    "slot": null,
+    "stats": {"happiness": 1},
+    "image_path": "",
+    "base_price": 15
+  },
+  {
+    "id": 5,
+    "name": "Tapetinho de Dormir",
+    "type": "consumable",
+    "rarity": "common",
+    "slot": null,
+    "stats": {"happiness": 3},
+    "image_path": "",
+    "base_price": 60
+  },
+  {
+    "id": 6,
+    "name": "Petisco de Frango",
+    "type": "consumable",
+    "rarity": "common",
+    "slot": null,
+    "stats": {"happiness": 4},
+    "image_path": "",
+    "base_price": 45
+  },
+  {
+    "id": 7,
+    "name": "Escova de Pelo",
+    "type": "consumable",
+    "rarity": "common",
+    "slot": null,
+    "stats": {"happiness": 2},
+    "image_path": "",
+    "base_price": 35
+  },
+  {
+    "id": 8,
+    "name": "Coleira Simples",
+    "type": "equipment",
+    "rarity": "common",
+    "slot": "accessory",
+    "stats": {"power": 2},
+    "image_path": "",
+    "base_price": 80
+  },
+  {
+    "id": 9,
+    "name": "Bandana Listrada",
+    "type": "equipment",
+    "rarity": "uncommon",
+    "slot": "accessory",
+    "stats": {"happiness": 3, "power": 2},
+    "image_path": "",
+    "base_price": 150
+  },
+  {
+    "id": 10,
+    "name": "Chapéu de Palha",
+    "type": "equipment",
+    "rarity": "uncommon",
+    "slot": "head",
+    "stats": {"happiness": 4},
+    "image_path": "",
+    "base_price": 180
+  },
+  {
+    "id": 11,
+    "name": "Colete Xadrez",
+    "type": "equipment",
+    "rarity": "uncommon",
+    "slot": "body",
+    "stats": {"power": 4, "happiness": 2},
+    "image_path": "",
+    "base_price": 200
+  },
+  {
+    "id": 12,
+    "name": "Osso Defumado",
+    "type": "consumable",
+    "rarity": "uncommon",
+    "slot": null,
+    "stats": {"happiness": 6},
+    "image_path": "",
+    "base_price": 120
+  },
+  {
+    "id": 13,
+    "name": "Bola de Tênis Oficial",
+    "type": "consumable",
+    "rarity": "uncommon",
+    "slot": null,
+    "stats": {"happiness": 5, "power": 1},
+    "image_path": "",
+    "base_price": 110
+  },
+  {
+    "id": 14,
+    "name": "Ração Premium",
+    "type": "consumable",
+    "rarity": "uncommon",
+    "slot": null,
+    "stats": {"happiness": 5, "power": 3},
+    "image_path": "",
+    "base_price": 160
+  },
+  {
+    "id": 15,
+    "name": "Cobertor Quentinho",
+    "type": "consumable",
+    "rarity": "uncommon",
+    "slot": null,
+    "stats": {"happiness": 6},
+    "image_path": "",
+    "base_price": 140
+  },
+  {
+    "id": 16,
+    "name": "Mochilinha de Passeio",
+    "type": "equipment",
+    "rarity": "uncommon",
+    "slot": "body",
+    "stats": {"power": 3, "happiness": 3},
+    "image_path": "",
+    "base_price": 220
+  },
+  {
+    "id": 17,
+    "name": "Óculos de Sol",
+    "type": "equipment",
+    "rarity": "rare",
+    "slot": "head",
+    "stats": {"happiness": 6, "power": 3},
+    "image_path": "",
+    "base_price": 350
+  },
+  {
+    "id": 18,
+    "name": "Capa de Herói",
+    "type": "equipment",
+    "rarity": "rare",
+    "slot": "body",
+    "stats": {"power": 8, "happiness": 4},
+    "image_path": "",
+    "base_price": 420
+  },
+  {
+    "id": 19,
+    "name": "Coleira de Ouro",
+    "type": "equipment",
+    "rarity": "rare",
+    "slot": "accessory",
+    "stats": {"power": 6, "happiness": 5},
+    "image_path": "",
+    "base_price": 500
+  },
+  {
+    "id": 20,
+    "name": "Espada de Madeira",
+    "type": "equipment",
+    "rarity": "rare",
+    "slot": "weapon",
+    "stats": {"power": 10},
+    "image_path": "",
+    "base_price": 380
+  },
+  {
+    "id": 21,
+    "name": "Osso Gigante Dourado",
+    "type": "consumable",
+    "rarity": "rare",
+    "slot": null,
+    "stats": {"happiness": 12, "power": 2},
+    "image_path": "",
+    "base_price": 300
+  },
+  {
+    "id": 22,
+    "name": "Bola Mágica Farejadora",
+    "type": "consumable",
+    "rarity": "rare",
+    "slot": null,
+    "stats": {"happiness": 10, "power": 4},
+    "image_path": "",
+    "base_price": 320
+  },
+  {
+    "id": 23,
+    "name": "Ração de Campeão",
+    "type": "consumable",
+    "rarity": "rare",
+    "slot": null,
+    "stats": {"happiness": 8, "power": 7},
+    "image_path": "",
+    "base_price": 400
+  },
+  {
+    "id": 24,
+    "name": "Boina do Detetive",
+    "type": "equipment",
+    "rarity": "rare",
+    "slot": "head",
+    "stats": {"happiness": 7, "power": 5},
+    "image_path": "",
+    "base_price": 450
+  },
+  {
+    "id": 25,
+    "name": "Armadura de Pelúcia",
+    "type": "equipment",
+    "rarity": "rare",
+    "slot": "body",
+    "stats": {"power": 9, "happiness": 5},
+    "image_path": "",
+    "base_price": 480
+  },
+  {
+    "id": 26,
+    "name": "Lança de Graveto Encantada",
+    "type": "equipment",
+    "rarity": "epic",
+    "slot": "weapon",
+    "stats": {"power": 18, "happiness": 3},
+    "image_path": "",
+    "base_price": 800
+  },
+  {
+    "id": 27,
+    "name": "Coroa de Floq",
+    "type": "equipment",
+    "rarity": "epic",
+    "slot": "head",
+    "stats": {"power": 12, "happiness": 10},
+    "image_path": "",
+    "base_price": 950
+  },
+  {
+    "id": 28,
+    "name": "Manto das Sombras",
+    "type": "equipment",
+    "rarity": "epic",
+    "slot": "body",
+    "stats": {"power": 15, "happiness": 7},
+    "image_path": "",
+    "base_price": 1000
+  },
+  {
+    "id": 29,
+    "name": "Amuleto do Rabo Feliz",
+    "type": "equipment",
+    "rarity": "epic",
+    "slot": "accessory",
+    "stats": {"happiness": 15, "power": 8},
+    "image_path": "",
+    "base_price": 900
+  },
+  {
+    "id": 30,
+    "name": "Elixir da Felicidade",
+    "type": "consumable",
+    "rarity": "epic",
+    "slot": null,
+    "stats": {"happiness": 20},
+    "image_path": "",
+    "base_price": 750
+  },
+  {
+    "id": 31,
+    "name": "Osso Cósmico",
+    "type": "consumable",
+    "rarity": "epic",
+    "slot": null,
+    "stats": {"happiness": 18, "power": 8},
+    "image_path": "",
+    "base_price": 820
+  },
+  {
+    "id": 32,
+    "name": "Bola do Universo",
+    "type": "consumable",
+    "rarity": "epic",
+    "slot": null,
+    "stats": {"happiness": 16, "power": 10},
+    "image_path": "",
+    "base_price": 870
+  },
+  {
+    "id": 33,
+    "name": "Capacete Espacial do Floq",
+    "type": "equipment",
+    "rarity": "epic",
+    "slot": "head",
+    "stats": {"power": 14, "happiness": 11},
+    "image_path": "",
+    "base_price": 1100
+  },
+  {
+    "id": 34,
+    "name": "Escudo da Casinha",
+    "type": "equipment",
+    "rarity": "epic",
+    "slot": "accessory",
+    "stats": {"power": 13, "happiness": 9},
+    "image_path": "",
+    "base_price": 980
+  },
+  {
+    "id": 35,
+    "name": "Espada Lendária do Osso",
+    "type": "equipment",
+    "rarity": "legendary",
+    "slot": "weapon",
+    "stats": {"power": 30, "happiness": 8},
+    "image_path": "",
+    "base_price": 2500
+  },
+  {
+    "id": 36,
+    "name": "Capa do Floq Eterno",
+    "type": "equipment",
+    "rarity": "legendary",
+    "slot": "body",
+    "stats": {"power": 25, "happiness": 18},
+    "image_path": "",
+    "base_price": 3000
+  },
+  {
+    "id": 37,
+    "name": "Coroa Ancestral da Matilha",
+    "type": "equipment",
+    "rarity": "legendary",
+    "slot": "head",
+    "stats": {"power": 20, "happiness": 25},
+    "image_path": "",
+    "base_price": 3500
+  },
+  {
+    "id": 38,
+    "name": "Coleira do Destino",
+    "type": "equipment",
+    "rarity": "legendary",
+    "slot": "accessory",
+    "stats": {"power": 22, "happiness": 20},
+    "image_path": "",
+    "base_price": 3200
+  },
+  {
+    "id": 39,
+    "name": "Osso Primordial",
+    "type": "consumable",
+    "rarity": "legendary",
+    "slot": null,
+    "stats": {"happiness": 40, "power": 15},
+    "image_path": "",
+    "base_price": 2000
+  },
+  {
+    "id": 40,
+    "name": "Pergaminho do Floq Antigo",
+    "type": "consumable",
+    "rarity": "legendary",
+    "slot": null,
+    "stats": {"happiness": 30, "power": 20},
+    "image_path": "",
+    "base_price": 2200
+  },
+  {
+    "id": 41,
+    "name": "Graveto Comum",
+    "type": "consumable",
+    "rarity": "common",
+    "slot": null,
+    "stats": {"happiness": 1},
+    "image_path": "",
+    "base_price": 10
+  },
+  {
+    "id": 42,
+    "name": "Pote de Água Fresca",
+    "type": "consumable",
+    "rarity": "common",
+    "slot": null,
+    "stats": {"happiness": 2},
+    "image_path": "",
+    "base_price": 20
+  },
+  {
+    "id": 43,
+    "name": "Lenço de Pescoço",
+    "type": "equipment",
+    "rarity": "uncommon",
+    "slot": "accessory",
+    "stats": {"happiness": 4, "power": 1},
+    "image_path": "",
+    "base_price": 170
+  },
+  {
+    "id": 44,
+    "name": "Tridente de Espuma",
+    "type": "equipment",
+    "rarity": "rare",
+    "slot": "weapon",
+    "stats": {"power": 11, "happiness": 2},
+    "image_path": "",
+    "base_price": 400
+  },
+  {
+    "id": 45,
+    "name": "Aura do Alfa",
+    "type": "equipment",
+    "rarity": "legendary",
+    "slot": "accessory",
+    "stats": {"power": 28, "happiness": 22},
+    "image_path": "",
+    "base_price": 4000
+  }
+]

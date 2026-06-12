@@ -1,0 +1,336 @@
+2026-06-09 18:41:31,675 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 18:41:31,675 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 18:41:31,675 - discord.client - INFO - logging in using static token
+2026-06-09 18:41:33,005 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 18:41:33,744 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-09 18:41:33,768 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 18:41:33,966 - discord.ext.tasks - ERROR - Unhandled exception in internal background task 'happiness_decay_loop'.
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/tasks/__init__.py", line 247, in _loop
+    await self.coro(*args, **kwargs)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 145, in happiness_decay_loop
+    db.add_happiness(row["server_id"], -DECAY_AMOUNT)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/medeiros/floq-bot/db.py", line 568, in add_happiness
+    update_mood(server_id)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/medeiros/floq-bot/db.py", line 623, in update_mood
+    if random.random() < 0.2:
+       ^^^^^^
+NameError: name 'random' is not defined. Did you forget to import 'random'?
+2026-06-09 18:41:34,505 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 370595893b89c765fbcefde563c7a407).
+2026-06-09 18:41:36,530 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 18:42:09,805 - bot - ERROR - Command error in pet: Command raised an exception: NameError: name 'random' is not defined
+2026-06-09 18:50:46,171 - bot - INFO - Bot shutting down...
+2026-06-09 18:50:46,172 - bot - INFO - Bot shutting down...
+2026-06-09 18:50:46,192 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='discord-ext-tasks: Mascot.happiness_decay_loop' coro=<Loop._loop() done, defined at /home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/tasks/__init__.py:208> exception=NameError("name 'random' is not defined")>
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/tasks/__init__.py", line 279, in _loop
+    raise exc
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/tasks/__init__.py", line 247, in _loop
+    await self.coro(*args, **kwargs)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 145, in happiness_decay_loop
+    db.add_happiness(row["server_id"], -DECAY_AMOUNT)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/medeiros/floq-bot/db.py", line 568, in add_happiness
+    update_mood(server_id)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/medeiros/floq-bot/db.py", line 623, in update_mood
+    if random.random() < 0.2:
+       ^^^^^^
+NameError: name 'random' is not defined. Did you forget to import 'random'?
+2026-06-09 18:51:44,254 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 18:51:44,254 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 18:51:44,254 - discord.client - INFO - logging in using static token
+2026-06-09 18:51:45,679 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 18:51:45,714 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-09 18:51:45,716 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 18:51:45,951 - discord.ext.tasks - ERROR - Unhandled exception in internal background task 'happiness_decay_loop'.
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/tasks/__init__.py", line 247, in _loop
+    await self.coro(*args, **kwargs)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 145, in happiness_decay_loop
+    db.add_happiness(row["server_id"], -DECAY_AMOUNT)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/medeiros/floq-bot/db.py", line 568, in add_happiness
+    update_mood(server_id)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/medeiros/floq-bot/db.py", line 623, in update_mood
+    if random.random() < 0.2:
+       ^^^^^^
+NameError: name 'random' is not defined. Did you forget to import 'random'?
+2026-06-09 18:51:46,427 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2b65dbca11f8362d399ab21d6c9f2258).
+2026-06-09 18:51:48,454 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 19:09:57,620 - bot - INFO - Bot shutting down...
+2026-06-09 19:09:57,635 - bot - INFO - Bot shutting down...
+2026-06-09 19:09:57,723 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='discord-ext-tasks: Mascot.happiness_decay_loop' coro=<Loop._loop() done, defined at /home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/tasks/__init__.py:208> exception=NameError("name 'random' is not defined")>
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/tasks/__init__.py", line 279, in _loop
+    raise exc
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/tasks/__init__.py", line 247, in _loop
+    await self.coro(*args, **kwargs)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 145, in happiness_decay_loop
+    db.add_happiness(row["server_id"], -DECAY_AMOUNT)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/medeiros/floq-bot/db.py", line 568, in add_happiness
+    conn.commit()
+    ~~~~~~~~~~~^^
+  File "/home/medeiros/floq-bot/db.py", line 623, in update_mood
+    # 20% chance to be chaotic when neutral
+NameError: name 'random' is not defined. Did you forget to import 'random'?
+2026-06-09 19:10:24,307 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 19:10:24,308 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 19:10:24,313 - discord.client - INFO - logging in using static token
+2026-06-09 19:10:25,780 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 19:10:25,925 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-09 19:10:25,937 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 19:10:26,788 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e157fb322394876ee7818e5c2cc5f308).
+2026-06-09 19:10:28,808 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 19:11:15,117 - discord.ui.view - ERROR - Ignoring exception in view <MascotView timeout=120 children=3> for item <Button style=<ButtonStyle.success: 3> url=None disabled=False label='🎾 Brincar' emoji=None row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ui/view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 120, in play
+    await self.update(interaction)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 100, in update
+    await interaction.response.edit_message(embed=embed, attachments=[file], view=self)
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/interactions.py", line 1198, in edit_message
+    raise InteractionResponded(self._parent)
+discord.errors.InteractionResponded: This interaction has already been responded to before
+2026-06-09 19:11:18,353 - discord.ui.view - ERROR - Ignoring exception in view <MascotView timeout=120 children=3> for item <Button style=<ButtonStyle.primary: 1> url=None disabled=False label='🍖 Alimentar' emoji=None row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ui/view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 113, in feed
+    await self.update(interaction)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 100, in update
+    await interaction.response.edit_message(embed=embed, attachments=[file], view=self)
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/interactions.py", line 1198, in edit_message
+    raise InteractionResponded(self._parent)
+discord.errors.InteractionResponded: This interaction has already been responded to before
+2026-06-09 19:11:22,582 - discord.ui.view - ERROR - Ignoring exception in view <MascotView timeout=120 children=3> for item <Button style=<ButtonStyle.success: 3> url=None disabled=False label='🎾 Brincar' emoji=None row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ui/view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 120, in play
+    await self.update(interaction)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 100, in update
+    await interaction.response.edit_message(embed=embed, attachments=[file], view=self)
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/interactions.py", line 1198, in edit_message
+    raise InteractionResponded(self._parent)
+discord.errors.InteractionResponded: This interaction has already been responded to before
+2026-06-09 19:11:24,787 - discord.ui.view - ERROR - Ignoring exception in view <MascotView timeout=120 children=3> for item <Button style=<ButtonStyle.success: 3> url=None disabled=False label='🎾 Brincar' emoji=None row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ui/view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 120, in play
+    await self.update(interaction)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 100, in update
+    await interaction.response.edit_message(embed=embed, attachments=[file], view=self)
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/interactions.py", line 1198, in edit_message
+    raise InteractionResponded(self._parent)
+discord.errors.InteractionResponded: This interaction has already been responded to before
+2026-06-09 19:11:27,595 - discord.ui.view - ERROR - Ignoring exception in view <MascotView timeout=120 children=3> for item <Button style=<ButtonStyle.success: 3> url=None disabled=False label='🎾 Brincar' emoji=None row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ui/view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 120, in play
+    await self.update(interaction)
+  File "/home/medeiros/floq-bot/cogs/mascot.py", line 100, in update
+    await interaction.response.edit_message(embed=embed, attachments=[file], view=self)
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/interactions.py", line 1198, in edit_message
+    raise InteractionResponded(self._parent)
+discord.errors.InteractionResponded: This interaction has already been responded to before
+2026-06-09 19:26:55,014 - bot - INFO - Bot shutting down...
+2026-06-09 19:26:55,109 - bot - INFO - Bot shutting down...
+2026-06-09 19:27:55,077 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 19:27:55,077 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 19:27:55,078 - discord.client - INFO - logging in using static token
+2026-06-09 19:27:56,440 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 19:27:56,578 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-09 19:27:56,598 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 19:27:57,217 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2d1cafde58fe74737cd94676761b2794).
+2026-06-09 19:27:59,240 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 19:55:38,911 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 19:55:38,945 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 19:55:38,946 - discord.client - INFO - logging in using static token
+2026-06-09 19:55:40,396 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 19:55:40,843 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-09 19:55:40,870 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 19:55:41,508 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 66e33acbee1c97e14026e46570d0b768).
+2026-06-09 19:55:43,527 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 20:01:45,297 - bot - INFO - Bot shutting down...
+2026-06-09 20:01:45,374 - bot - INFO - Bot shutting down...
+2026-06-09 20:05:32,122 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 20:05:32,122 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 20:05:32,123 - discord.client - INFO - logging in using static token
+2026-06-09 20:05:33,497 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 20:05:33,533 - bot - ERROR - Failed to load cog cogs.mascot: Extension 'cogs.mascot' raised an error: IndentationError: unexpected indent (mascot.py, line 125)
+2026-06-09 20:05:33,557 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 20:05:34,069 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bc135080c01e3dbc5e1d01041296cbaa).
+2026-06-09 20:05:36,095 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 20:08:05,103 - bot - INFO - Bot shutting down...
+2026-06-09 20:08:05,104 - bot - INFO - Bot shutting down...
+2026-06-09 20:08:59,699 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 20:08:59,699 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 20:08:59,699 - discord.client - INFO - logging in using static token
+2026-06-09 20:09:01,046 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 20:09:01,172 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-09 20:09:01,177 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 20:09:02,041 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e9b912272dd6b94bc1acb91656017296).
+2026-06-09 20:09:04,057 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 20:17:50,313 - bot - INFO - Bot shutting down...
+2026-06-09 20:17:50,315 - bot - INFO - Bot shutting down...
+2026-06-09 20:20:22,821 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 20:20:22,821 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 20:20:22,822 - discord.client - INFO - logging in using static token
+2026-06-09 20:20:24,042 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 20:20:24,071 - bot - ERROR - Failed to load cog cogs.mascot: Extension 'cogs.mascot' has no 'setup' function.
+2026-06-09 20:20:24,073 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 20:20:24,609 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fda9056546d6dcce3acfdde950f51283).
+2026-06-09 20:20:26,626 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 20:21:29,737 - bot - INFO - Bot shutting down...
+2026-06-09 20:21:29,737 - bot - INFO - Bot shutting down...
+2026-06-09 20:22:17,582 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 20:22:17,582 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 20:22:17,583 - discord.client - INFO - logging in using static token
+2026-06-09 20:22:18,683 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 20:22:18,715 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-09 20:22:18,716 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 20:22:19,317 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 34d4988c3eef2e240ecb4b7fbec11dcd).
+2026-06-09 20:22:21,364 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 20:24:22,699 - bot - INFO - Bot shutting down...
+2026-06-09 20:24:22,702 - bot - INFO - Bot shutting down...
+2026-06-09 20:25:30,131 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 20:25:30,131 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 20:25:30,132 - discord.client - INFO - logging in using static token
+2026-06-09 20:25:31,186 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 20:25:31,217 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-09 20:25:31,219 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 20:25:31,799 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5edc3a8a2c2d8f50c5201fa13c90c597).
+2026-06-09 20:25:33,930 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 20:26:52,191 - bot - INFO - Bot shutting down...
+2026-06-09 20:26:52,192 - bot - INFO - Bot shutting down...
+2026-06-09 20:28:52,048 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 20:28:52,048 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 20:28:52,049 - discord.client - INFO - logging in using static token
+2026-06-09 20:28:53,261 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 20:28:53,298 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-09 20:28:53,300 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 20:28:53,934 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c79557407122d79db32d22c46c1c9559).
+2026-06-09 20:28:55,956 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 20:39:40,657 - bot - ERROR - Command error in daily: Command raised an exception: TypeError: unsupported operand type(s) for -: 'int' and 'str'
+2026-06-09 20:55:41,753 - bot - INFO - Bot shutting down...
+2026-06-09 20:55:41,754 - bot - INFO - Bot shutting down...
+2026-06-09 22:36:35,630 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 22:36:35,631 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 22:36:35,633 - discord.client - INFO - logging in using static token
+2026-06-09 22:36:42,831 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 22:36:43,166 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-09 22:36:43,190 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 22:36:43,196 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-09 22:36:43,974 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9e15322ad260154fe429ab47d5eb7861).
+2026-06-09 22:36:45,992 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 22:39:12,898 - bot - ERROR - Command error in shop: Command raised an exception: AttributeError: 'sqlite3.Row' object has no attribute 'get'
+2026-06-09 22:40:48,802 - bot - ERROR - Command error in shop: Command raised an exception: AttributeError: 'sqlite3.Row' object has no attribute 'get'
+2026-06-09 22:46:17,021 - bot - INFO - Bot shutting down...
+2026-06-09 22:46:17,025 - bot - INFO - Bot shutting down...
+2026-06-09 22:46:28,939 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 22:46:28,939 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 22:46:28,940 - discord.client - INFO - logging in using static token
+2026-06-09 22:46:35,421 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 22:46:35,439 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-09 22:46:35,442 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 22:46:35,444 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-09 22:46:36,211 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a67ad8d377b17408a320dd020da020d3).
+2026-06-09 22:46:38,254 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 22:46:44,953 - bot - ERROR - Command error in shop: Command raised an exception: AttributeError: 'sqlite3.Row' object has no attribute 'get'
+2026-06-09 22:46:51,786 - bot - ERROR - Command error in shop: Command raised an exception: AttributeError: 'sqlite3.Row' object has no attribute 'get'
+2026-06-09 22:48:30,600 - bot - INFO - Bot shutting down...
+2026-06-09 22:48:30,602 - bot - INFO - Bot shutting down...
+2026-06-09 22:53:26,430 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-09 22:53:26,430 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-09 22:53:26,431 - discord.client - INFO - logging in using static token
+2026-06-09 22:53:32,901 - bot - INFO - Loaded cog: cogs.economy
+2026-06-09 22:53:32,917 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-09 22:53:32,918 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-09 22:53:32,919 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-09 22:53:33,621 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 786af540cc7262fc019442a44ffc8f34).
+2026-06-09 22:53:35,630 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-09 22:53:55,608 - bot - ERROR - Command error in shop: Command raised an exception: AttributeError: 'sqlite3.Row' object has no attribute 'get'
+2026-06-09 22:59:08,208 - bot - INFO - Bot shutting down...
+2026-06-09 22:59:08,209 - bot - INFO - Bot shutting down...
+2026-06-10 11:27:18,041 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-10 11:27:18,061 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-10 11:27:18,062 - discord.client - INFO - logging in using static token
+2026-06-10 11:27:25,578 - bot - INFO - Loaded cog: cogs.economy
+2026-06-10 11:27:25,911 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-10 11:27:25,941 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-10 11:27:25,956 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-10 11:27:26,681 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5e725bbf288ccc6f738d303656698b97).
+2026-06-10 11:27:28,707 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-10 11:31:21,680 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-10 11:31:21,698 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-10 11:31:21,699 - discord.client - INFO - logging in using static token
+2026-06-10 11:31:28,641 - bot - INFO - Loaded cog: cogs.economy
+2026-06-10 11:31:29,019 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-10 11:31:29,043 - bot - ERROR - Failed to load cog cogs.items: Extension 'cogs.items' raised an error: CommandRegistrationError: The alias inv is already an existing command or alias.
+2026-06-10 11:31:29,057 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-10 11:31:29,844 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 71fa9cf1813d9ed35602199fed450c1a).
+2026-06-10 11:31:31,862 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-10 11:33:13,919 - bot - ERROR - Command error in daily: Command raised an exception: TypeError: unsupported operand type(s) for -: 'int' and 'str'
+2026-06-10 11:56:28,559 - bot - ERROR - Command error in daily: Command raised an exception: TypeError: unsupported operand type(s) for -: 'int' and 'str'
+2026-06-10 11:59:06,847 - bot - ERROR - Command error in daily: Command raised an exception: TypeError: unsupported operand type(s) for -: 'int' and 'str'
+2026-06-10 18:39:15,385 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-10 18:39:15,387 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-10 18:39:15,389 - discord.client - INFO - logging in using static token
+2026-06-10 18:39:23,626 - bot - INFO - Loaded cog: cogs.economy
+2026-06-10 18:39:24,017 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-10 18:39:24,026 - bot - INFO - Loaded cog: cogs.items
+2026-06-10 18:39:24,039 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-10 18:39:24,863 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6fc4eebe3a4e4ddd50beada26530311b).
+2026-06-10 18:39:26,881 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-10 18:40:22,866 - bot - ERROR - Command error in equip: Converting to "int" failed for parameter "item_id".
+2026-06-10 18:44:38,089 - bot - ERROR - Command error in pet: Command raised an exception: IndexError: No item with that key
+2026-06-10 18:44:42,749 - bot - ERROR - Command error in pet: Command raised an exception: IndexError: No item with that key
+2026-06-10 18:59:15,779 - bot - INFO - Bot shutting down...
+2026-06-10 18:59:15,783 - bot - INFO - Bot shutting down...
+2026-06-10 19:43:18,149 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-10 19:43:18,149 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-10 19:43:18,149 - discord.client - INFO - logging in using static token
+2026-06-10 19:43:25,483 - bot - INFO - Loaded cog: cogs.economy
+2026-06-10 19:43:25,698 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-10 19:43:25,719 - bot - INFO - Loaded cog: cogs.items
+2026-06-10 19:43:25,731 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-10 19:43:25,747 - bot - INFO - Loaded cog: cogs.guilds
+2026-06-10 19:43:27,027 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1043d8474895be70ebfc98244e47f73a).
+2026-06-10 19:43:29,037 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-10 19:45:01,700 - bot - ERROR - Command error in pet: Command raised an exception: IndexError: No item with that key
+2026-06-10 19:56:50,236 - bot - INFO - Bot shutting down...
+2026-06-10 19:56:50,238 - bot - INFO - Bot shutting down...
+2026-06-11 21:29:28,858 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-11 21:29:28,886 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-11 21:29:28,888 - discord.client - INFO - logging in using static token
+2026-06-11 21:29:35,908 - bot - INFO - Loaded cog: cogs.economy
+2026-06-11 21:29:36,284 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-11 21:29:36,307 - bot - INFO - Loaded cog: cogs.items
+2026-06-11 21:29:36,313 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-11 21:29:36,323 - bot - INFO - Loaded cog: cogs.guilds
+2026-06-11 21:29:37,100 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 45041af85f0f9568225b77c2213a70cb).
+2026-06-11 21:29:39,126 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-11 21:35:22,651 - bot - INFO - Bot shutting down...
+2026-06-11 21:35:22,655 - bot - INFO - Bot shutting down...
+2026-06-11 22:28:34,999 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-11 22:28:35,038 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-11 22:28:35,040 - discord.client - INFO - logging in using static token
+2026-06-11 22:28:49,241 - bot - INFO - Loaded cog: cogs.economy
+2026-06-11 22:28:50,071 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-11 22:28:50,092 - bot - INFO - Loaded cog: cogs.items
+2026-06-11 22:28:50,122 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-11 22:28:50,131 - bot - INFO - Loaded cog: cogs.guilds
+2026-06-11 22:28:51,397 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4d89cf9f737e010df205ec94a649818e).
+2026-06-11 22:28:53,410 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-11 22:30:04,930 - bot - INFO - Bot shutting down...
+2026-06-11 22:30:04,935 - bot - INFO - Bot shutting down...
