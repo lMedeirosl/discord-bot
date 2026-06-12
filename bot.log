@@ -334,3 +334,49 @@ discord.errors.InteractionResponded: This interaction has already been responded
 2026-06-11 22:28:53,410 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
 2026-06-11 22:30:04,930 - bot - INFO - Bot shutting down...
 2026-06-11 22:30:04,935 - bot - INFO - Bot shutting down...
+2026-06-12 19:48:54,187 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-12 19:48:54,187 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-12 19:48:54,187 - discord.client - INFO - logging in using static token
+2026-06-12 19:49:01,036 - bot - INFO - Loaded cog: cogs.economy
+2026-06-12 19:49:01,514 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-12 19:49:01,557 - bot - INFO - Loaded cog: cogs.items
+2026-06-12 19:49:01,606 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-12 19:49:01,628 - bot - INFO - Loaded cog: cogs.guilds
+2026-06-12 19:49:01,643 - bot - ERROR - Failed to load cog cogs.gameboy: Extension 'cogs.gameboy' raised an error: ModuleNotFoundError: No module named 'mascot'
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/commands/bot.py", line 962, in _load_from_module_spec
+    spec.loader.exec_module(lib)  # type: ignore
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "/home/medeiros/floq-bot/cogs/gameboy.py", line 16, in <module>
+    from mascot import generate_mascot_image, MOOD_LABELS, FEED_COST, FEED_HAPPINESS_MIN, FEED_HAPPINESS_MAX, PLAY_HAPPINESS_BOOST
+ModuleNotFoundError: No module named 'mascot'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/bot.py", line 33, in setup_hook
+    await self.load_extension(cog)
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/commands/bot.py", line 1040, in load_extension
+    await self._load_from_module_spec(spec, name)
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/commands/bot.py", line 965, in _load_from_module_spec
+    raise errors.ExtensionFailed(key, e) from e
+discord.ext.commands.errors.ExtensionFailed: Extension 'cogs.gameboy' raised an error: ModuleNotFoundError: No module named 'mascot'
+2026-06-12 19:49:02,578 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 433c0a901d9bf8761502977d70c6f561).
+2026-06-12 19:49:04,602 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-12 20:01:38,598 - bot - INFO - Bot shutting down...
+2026-06-12 20:01:38,603 - bot - INFO - Bot shutting down...
+2026-06-12 20:01:46,817 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-12 20:01:46,817 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-12 20:01:46,817 - discord.client - INFO - logging in using static token
+2026-06-12 20:01:53,783 - bot - INFO - Loaded cog: cogs.economy
+2026-06-12 20:01:53,798 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-12 20:01:53,799 - bot - INFO - Loaded cog: cogs.items
+2026-06-12 20:01:53,800 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-12 20:01:53,802 - bot - INFO - Loaded cog: cogs.guilds
+2026-06-12 20:01:53,809 - bot - INFO - Loaded cog: cogs.gameboy
+2026-06-12 20:01:54,593 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 66d05be70d64472eb1fa909d1cd98806).
+2026-06-12 20:01:56,628 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-12 20:06:29,619 - bot - INFO - Bot shutting down...
+2026-06-12 20:06:29,621 - bot - INFO - Bot shutting down...

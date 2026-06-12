@@ -15,6 +15,7 @@ COGS = [
     "cogs.items",
     "cogs.floq_events",
     "cogs.guilds",
+    "cogs.gameboy",
 ]
 
 class Bot(commands.Bot):
