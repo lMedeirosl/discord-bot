@@ -380,3 +380,219 @@ discord.ext.commands.errors.ExtensionFailed: Extension 'cogs.gameboy' raised an 
 2026-06-12 20:01:56,628 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
 2026-06-12 20:06:29,619 - bot - INFO - Bot shutting down...
 2026-06-12 20:06:29,621 - bot - INFO - Bot shutting down...
+2026-06-13 11:05:59,514 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-13 11:05:59,540 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-13 11:05:59,541 - discord.client - INFO - logging in using static token
+2026-06-13 11:06:05,880 - bot - INFO - Loaded cog: cogs.economy
+2026-06-13 11:06:06,377 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-13 11:06:06,390 - bot - INFO - Loaded cog: cogs.items
+2026-06-13 11:06:06,407 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-13 11:06:06,439 - bot - INFO - Loaded cog: cogs.guilds
+2026-06-13 11:06:06,461 - bot - INFO - Loaded cog: cogs.gameboy
+2026-06-13 11:06:07,306 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8a7dd9c12bd794b4c81885aa58b361fc).
+2026-06-13 11:06:09,324 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-13 11:08:08,342 - bot - ERROR - Command error in equip: Converting to "int" failed for parameter "item_id".
+2026-06-13 11:12:12,816 - bot - INFO - Bot shutting down...
+2026-06-13 11:12:12,821 - bot - INFO - Bot shutting down...
+2026-06-13 13:42:51,474 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-13 13:42:51,515 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-13 13:42:51,516 - discord.client - INFO - logging in using static token
+2026-06-13 13:42:59,656 - bot - INFO - Loaded cog: cogs.economy
+2026-06-13 13:43:00,076 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-13 13:43:00,096 - bot - INFO - Loaded cog: cogs.items
+2026-06-13 13:43:00,114 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-13 13:43:00,131 - bot - INFO - Loaded cog: cogs.guilds
+2026-06-13 13:43:00,144 - bot - ERROR - Failed to load cog cogs.gameboy: Extension 'cogs.gameboy' raised an error: IndentationError: unexpected indent (gameboy.py, line 36)
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/commands/bot.py", line 962, in _load_from_module_spec
+    spec.loader.exec_module(lib)  # type: ignore
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 893, in get_code
+  File "<frozen importlib._bootstrap_external>", line 823, in source_to_code
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "/home/medeiros/floq-bot/cogs/gameboy.py", line 36
+    "common":    "⚪",
+IndentationError: unexpected indent
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/bot.py", line 61, in setup_hook
+    await self.load_extension(cog)
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/commands/bot.py", line 1040, in load_extension
+    await self._load_from_module_spec(spec, name)
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/commands/bot.py", line 965, in _load_from_module_spec
+    raise errors.ExtensionFailed(key, e) from e
+discord.ext.commands.errors.ExtensionFailed: Extension 'cogs.gameboy' raised an error: IndentationError: unexpected indent (gameboy.py, line 36)
+2026-06-13 13:43:00,159 - bot - INFO - Loaded cog: cogs.voice_fun
+2026-06-13 13:43:01,908 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a44305c412a2783d3af8eba7bfb26d2c).
+2026-06-13 13:43:04,045 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-13 13:47:12,435 - bot - INFO - Bot shutting down...
+2026-06-13 13:47:12,441 - bot - INFO - Bot shutting down...
+2026-06-13 13:52:47,256 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-13 13:52:47,256 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-13 13:52:47,257 - discord.client - INFO - logging in using static token
+2026-06-13 13:52:54,341 - bot - INFO - Loaded cog: cogs.economy
+2026-06-13 13:52:54,394 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-13 13:52:54,397 - bot - INFO - Loaded cog: cogs.items
+2026-06-13 13:52:54,400 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-13 13:52:54,405 - bot - INFO - Loaded cog: cogs.guilds
+2026-06-13 13:52:54,407 - bot - ERROR - Failed to load cog cogs.gameboy: Extension 'cogs.gameboy' raised an error: IndentationError: unexpected indent (gameboy.py, line 36)
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/commands/bot.py", line 962, in _load_from_module_spec
+    spec.loader.exec_module(lib)  # type: ignore
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 893, in get_code
+  File "<frozen importlib._bootstrap_external>", line 823, in source_to_code
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "/home/medeiros/floq-bot/cogs/gameboy.py", line 36
+    RARITY_EMOJI = {
+IndentationError: unexpected indent
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/bot.py", line 61, in setup_hook
+    await self.load_extension(cog)
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/commands/bot.py", line 1040, in load_extension
+    await self._load_from_module_spec(spec, name)
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/commands/bot.py", line 965, in _load_from_module_spec
+    raise errors.ExtensionFailed(key, e) from e
+discord.ext.commands.errors.ExtensionFailed: Extension 'cogs.gameboy' raised an error: IndentationError: unexpected indent (gameboy.py, line 36)
+2026-06-13 13:52:54,411 - bot - INFO - Loaded cog: cogs.voice_fun
+2026-06-13 13:52:55,553 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e5c01b78bb240a87c27b67303eed6c51).
+2026-06-13 13:52:57,568 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-13 13:54:57,918 - bot - INFO - Bot shutting down...
+2026-06-13 13:54:57,919 - bot - INFO - Bot shutting down...
+2026-06-13 13:58:15,250 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-06-13 13:58:15,250 - discord.client - WARNING - davey is not installed, voice will NOT be supported
+2026-06-13 13:58:15,251 - discord.client - INFO - logging in using static token
+2026-06-13 13:58:22,612 - bot - INFO - Loaded cog: cogs.economy
+2026-06-13 13:58:22,632 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-13 13:58:22,633 - bot - INFO - Loaded cog: cogs.items
+2026-06-13 13:58:22,635 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-13 13:58:22,639 - bot - INFO - Loaded cog: cogs.guilds
+2026-06-13 13:58:22,654 - bot - INFO - Loaded cog: cogs.gameboy
+2026-06-13 13:58:22,656 - bot - INFO - Loaded cog: cogs.voice_fun
+2026-06-13 13:58:23,551 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2df7ef02eecb826ef9f5976cbb6dccd6).
+2026-06-13 13:58:25,563 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-13 13:58:39,879 - bot - INFO - Bot shutting down...
+2026-06-13 13:58:39,881 - bot - INFO - Bot shutting down...
+2026-06-13 14:01:34,299 - discord.client - INFO - logging in using static token
+2026-06-13 14:01:41,438 - bot - INFO - Loaded cog: cogs.economy
+2026-06-13 14:01:41,457 - bot - INFO - Loaded cog: cogs.mascot
+2026-06-13 14:01:41,458 - bot - INFO - Loaded cog: cogs.items
+2026-06-13 14:01:41,460 - bot - INFO - Loaded cog: cogs.floq_events
+2026-06-13 14:01:41,461 - bot - INFO - Loaded cog: cogs.guilds
+2026-06-13 14:01:41,462 - bot - INFO - Loaded cog: cogs.gameboy
+2026-06-13 14:01:41,463 - bot - INFO - Loaded cog: cogs.voice_fun
+2026-06-13 14:01:42,175 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f8b218b4660ec4823d56282c3be82ffa).
+2026-06-13 14:01:44,193 - bot - INFO - Logged in as Floquinho#3090 (ID: 1513682913621971106)
+2026-06-13 14:02:10,505 - discord.voice_state - INFO - Connecting to voice...
+2026-06-13 14:02:10,506 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-06-13 14:02:10,804 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-gru13-a60d2306.discord.media:2083
+2026-06-13 14:02:11,570 - discord.voice_state - INFO - Voice connection complete.
+2026-06-13 14:02:13,294 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1514929236241285333 (Guild ID 1346278504437911562)
+2026-06-13 14:02:30,897 - discord.voice_state - INFO - Connecting to voice...
+2026-06-13 14:02:30,897 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-06-13 14:02:31,202 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-gru13-a60d2306.discord.media:2083
+2026-06-13 14:02:31,926 - discord.voice_state - INFO - Voice connection complete.
+2026-06-13 14:02:33,734 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1514929236241285333 (Guild ID 1346278504437911562)
+2026-06-13 14:03:05,448 - discord.voice_state - INFO - Connecting to voice...
+2026-06-13 14:03:05,448 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-06-13 14:03:05,742 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-gru13-a60d2306.discord.media:2083
+2026-06-13 14:03:06,444 - discord.voice_state - INFO - Voice connection complete.
+2026-06-13 14:03:08,518 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1514929236241285333 (Guild ID 1346278504437911562)
+2026-06-13 14:06:45,918 - discord.voice_state - INFO - Connecting to voice...
+2026-06-13 14:06:45,918 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-06-13 14:06:46,233 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-gru13-a60d2306.discord.media:2083
+2026-06-13 14:06:46,971 - discord.voice_state - INFO - Voice connection complete.
+2026-06-13 14:06:48,836 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1514929236241285333 (Guild ID 1346278504437911562)
+2026-06-13 14:06:54,956 - discord.voice_state - INFO - Connecting to voice...
+2026-06-13 14:06:54,956 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-06-13 14:06:55,246 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-gru13-a60d2306.discord.media:2083
+2026-06-13 14:06:55,914 - discord.voice_state - INFO - Voice connection complete.
+2026-06-13 14:06:57,942 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1514929236241285333 (Guild ID 1346278504437911562)
+2026-06-13 14:07:00,768 - discord.voice_state - INFO - Connecting to voice...
+2026-06-13 14:07:00,768 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-06-13 14:07:01,065 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-gru13-a60d2306.discord.media:2083
+2026-06-13 14:07:01,747 - discord.voice_state - INFO - Voice connection complete.
+2026-06-13 14:07:01,985 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1514929236241285333 (Guild ID 1346278504437911562)
+2026-06-13 14:07:16,520 - discord.voice_state - INFO - Connecting to voice...
+2026-06-13 14:07:16,520 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-06-13 14:07:22,904 - discord.ui.view - ERROR - Ignoring exception in view <GameBoyConsole timeout=300 children=4> for item <Button style=<ButtonStyle.secondary: 2> url=None disabled=False label='🐕 Latir na call' emoji=None row=2 sku_id=None id=None>
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ui/view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "/home/medeiros/floq-bot/cogs/gameboy.py", line 767, in _bark
+    vc.play(source, after=_after)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/voice_client.py", line 516, in play
+    raise ClientException('Not connected to voice.')
+discord.errors.ClientException: Not connected to voice.
+2026-06-13 14:07:46,526 - discord.voice_state - INFO - Timed out connecting to voice
+2026-06-13 14:07:46,526 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1514929236241285333 (Guild ID 1346278504437911562)
+2026-06-13 14:07:46,526 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1514929236241285333 (Guild ID 1346278504437911562)
+2026-06-13 14:07:47,215 - bot - ERROR - Command error in floq: Command raised an exception: Forbidden: 403 Forbidden (error code: 50001): Missing Access
+NoneType: None
+2026-06-13 14:07:47,435 - discord.client - ERROR - Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/client.py", line 508, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/medeiros/floq-bot/bot.py", line 97, in on_command_error
+    await ctx.send("❌ An unexpected error occurred.")
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/commands/context.py", line 1103, in send
+    return await super().send(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<16 lines>...
+    )  # type: ignore # The overloads don't support Optional but the implementation does
+    ^
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/abc.py", line 1706, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/http.py", line 772, in request
+    raise Forbidden(response, data)
+discord.errors.Forbidden: 403 Forbidden (error code: 50001): Missing Access
+2026-06-13 14:07:53,593 - discord.ui.view - WARNING - View interaction referencing unknown view for item <Button style=<ButtonStyle.secondary: 2> url=None disabled=False label='🐕 Latir na call' emoji=None row=2 sku_id=None id=None>. Discarding
+2026-06-13 14:07:58,737 - bot - ERROR - Command error in floq: Command raised an exception: Forbidden: 403 Forbidden (error code: 50001): Missing Access
+NoneType: None
+2026-06-13 14:07:58,936 - discord.client - ERROR - Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/client.py", line 508, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/medeiros/floq-bot/bot.py", line 97, in on_command_error
+    await ctx.send("❌ An unexpected error occurred.")
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/commands/context.py", line 1103, in send
+    return await super().send(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<16 lines>...
+    )  # type: ignore # The overloads don't support Optional but the implementation does
+    ^
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/abc.py", line 1706, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/http.py", line 772, in request
+    raise Forbidden(response, data)
+discord.errors.Forbidden: 403 Forbidden (error code: 50001): Missing Access
+2026-06-13 14:08:03,051 - discord.client - ERROR - Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/client.py", line 508, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/medeiros/floq-bot/bot.py", line 74, in on_command_error
+    await ctx.send(
+    ...<2 lines>...
+    )
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/ext/commands/context.py", line 1103, in send
+    return await super().send(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<16 lines>...
+    )  # type: ignore # The overloads don't support Optional but the implementation does
+    ^
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/abc.py", line 1706, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/medeiros/floq-bot/venv/lib/python3.14/site-packages/discord/http.py", line 772, in request
+    raise Forbidden(response, data)
+discord.errors.Forbidden: 403 Forbidden (error code: 50001): Missing Access

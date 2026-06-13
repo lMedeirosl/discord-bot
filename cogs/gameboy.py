@@ -7,18 +7,33 @@ navegando entre telas (Pet, Inventário, Equipar, Loja, Banco, Guilda,
 Status, Instruções) tudo dentro de embeds com visual retrô.
 """
 
+import io
 import time
 import random
+import asyncio
 import discord
 from discord.ext import commands
 from discord.ui import View, Select, Button, Modal, TextInput
 import db
-from cogs.mascot import generate_mascot_image, MOOD_LABELS, FEED_COST, FEED_HAPPINESS_MIN, FEED_HAPPINESS_MAX, PLAY_HAPPINESS_BOOST
+from .mascot import generate_mascot_image, MOOD_LABELS, FEED_COST, FEED_HAPPINESS_MIN, FEED_HAPPINESS_MAX, PLAY_HAPPINESS_BOOST
+from .economy import (
+    DAILY_REWARD, DAILY_COOLDOWN_SECONDS,
+    WORK_COOLDOWN_SECONDS, WORK_MIN_REWARD, WORK_MAX_REWARD, WORK_MESSAGES,
+    _cooldown_remaining, _format_seconds,
+)
+from .floq_events import HELP_CONTRIBUTION, HELP_COOLDOWN_SECONDS
+from .voice_fun import generate_bark_pcm
 
 # paleta clássica Game Boy (verde DMG)
 GB_GREEN = discord.Color.from_rgb(155, 188, 15)
 
-RARITY_EMOJI = {
+PLAY_COOLDOWN_SECONDS = 60
+
+# cooldown global por usuário pro botão "Brincar" (evita farm infinito de felicidade)
+_last_play: dict[str, float] = {}
+# cooldown global por usuário pro botão "Ajudar" (aventura)
+_last_help: dict[str, float] = {}
+RARITY_COLORS = {
     "common":    "⚪",
     "uncommon":  "🟢",
     "rare":      "🔵",
@@ -47,6 +62,39 @@ def gb_frame(lines: list[str]) -> str:
 # ─────────────────────────────────────────────────────────────────────────
 # TELAS
 # ─────────────────────────────────────────────────────────────────────────
+
+def screen_adventure(server_id: str):
+    adv = db.get_active_adventure(server_id)
+    lines = ["AVENTURA", ""]
+    if adv is None:
+        lines.append("Nenhuma aventura ativa")
+        lines.append("agora.")
+        lines.append("")
+        lines.append("Floq chama a matilha")
+        lines.append("de tempos em tempos!")
+    else:
+        progress = adv["progress"]
+        goal = adv["goal"]
+        pct = min(100, int(progress / goal * 100))
+        filled = pct // 10
+        bar = "█" * filled + "░" * (10 - filled)
+        lines.append(adv["title"][:28])
+        lines.append("")
+        lines.append(f"{bar}")
+        lines.append(f"{progress}/{goal} ({pct}%)")
+        lines.append("")
+        lines.append(f"Recompensa: {adv['reward_coins']}c")
+        lines.append(f"+ {adv['reward_xp']} XP")
+        lines.append("")
+        lines.append("[Ajudar Floq]")
+
+    embed = discord.Embed(
+        title="🎯 TELA — AVENTURA",
+        description=gb_frame(lines),
+        color=GB_GREEN,
+    )
+    return embed
+
 
 def screen_home(server_id: str, user_id: str) -> discord.Embed:
     db.ensure_server(server_id)
@@ -251,18 +299,22 @@ def screen_help():
     lines = [
         "INSTRUÇÕES",
         "",
-        "!pet     - ver/cuidar do Floq",
-        "!shop    - loja rotativa",
-        "!buy <item> - comprar",
-        "!inv     - mochila",
-        "!equip <id> - equipar",
-        "!daily   - recompensa diária",
-        "!work    - trabalhar",
-        "!banco   - cofre do servidor",
-        "!guildinfo - sua guilda",
-        "!ajudar  - aventura ativa",
+        "Tudo acontece aqui dentro!",
         "",
-        "Use !floq p/ abrir o console",
+        "🏠 Início: Daily, Trabalhar,",
+        "   Latir na call",
+        "🐾 Pet: cuidar do Floq",
+        "🎒 Mochila: seus itens",
+        "⚔️ Equipamento: equipar",
+        "🏪 Loja: comprar itens",
+        "🏦 Banco: cofre do server",
+        "🏰 Guilda: aliança",
+        "🎯 Aventura: ajudar Floq",
+        "⚡ Status: nível e poder",
+        "",
+        "Admin: !setchannel,",
+        "!guildcreate, !guildjoin,",
+        "!shoprefresh, !guildranking",
     ]
     embed = discord.Embed(
         title="📖 TELA — INSTRUÇÕES",
@@ -288,6 +340,12 @@ class AmountModal(Modal):
             amount = int(self.amount.value)
             if amount <= 0:
                 raise ValueError
+            if amount > 1_000_000_000:
+                await interaction.response.send_message(
+                    "❌ Valor muito alto. Floq não tem um cofre tão grande assim! 🐾",
+                    ephemeral=True
+                )
+                return
         except ValueError:
             await interaction.response.send_message("❌ Digite um número válido maior que zero.", ephemeral=True)
             return
@@ -306,6 +364,7 @@ SCREEN_OPTIONS = [
     discord.SelectOption(label="Loja",        value="shop",      emoji="🏪"),
     discord.SelectOption(label="Banco",       value="bank",      emoji="🏦"),
     discord.SelectOption(label="Guilda",      value="guild",     emoji="🏰"),
+    discord.SelectOption(label="Aventura",    value="adventure", emoji="🎯"),
     discord.SelectOption(label="Status",      value="status",    emoji="⚡"),
     discord.SelectOption(label="Instruções",  value="help",      emoji="📖"),
 ]
@@ -326,6 +385,8 @@ def render_screen(bot, server_id, user_id, screen, inv_page=1):
         return screen_bank(server_id, user_id), None
     elif screen == "guild":
         return screen_guild(bot, server_id), None
+    elif screen == "adventure":
+        return screen_adventure(server_id), None
     elif screen == "status":
         return screen_status(server_id, user_id), None
     elif screen == "help":
@@ -342,6 +403,7 @@ class GameBoyConsole(View):
         self.user_id = user_id
         self.screen = "home"
         self.inv_page = 1
+        self.message: discord.Message | None = None
         self._build()
 
     # ── construção dinâmica dos componentes ────────────────────────────
@@ -353,7 +415,12 @@ class GameBoyConsole(View):
         nav.callback = self._on_nav
         self.add_item(nav)
 
-        if self.screen == "pet":
+        if self.screen == "home":
+            self.add_item(self._btn("🎁 Daily", discord.ButtonStyle.success, self._daily, row=1))
+            self.add_item(self._btn("💼 Trabalhar", discord.ButtonStyle.primary, self._work, row=1))
+            self.add_item(self._btn("🐕 Latir na call", discord.ButtonStyle.secondary, self._bark, row=2))
+
+        elif self.screen == "pet":
             self.add_item(self._btn("🍖 Alimentar", discord.ButtonStyle.primary, self._feed, row=1))
             self.add_item(self._btn("🎾 Brincar", discord.ButtonStyle.success, self._play, row=1))
 
@@ -399,6 +466,10 @@ class GameBoyConsole(View):
         elif self.screen == "bank":
             self.add_item(self._btn("💰 Depositar", discord.ButtonStyle.success, self._deposit, row=1))
             self.add_item(self._btn("💸 Sacar", discord.ButtonStyle.danger, self._withdraw, row=1))
+
+        elif self.screen == "adventure":
+            if db.get_active_adventure(self.server_id) is not None:
+                self.add_item(self._btn("🐾 Ajudar Floq", discord.ButtonStyle.success, self._help_adventure, row=1))
 
     def _btn(self, label, style, callback, row=0):
         b = Button(label=label, style=style, row=row)
@@ -464,6 +535,16 @@ class GameBoyConsole(View):
     async def _play(self, interaction: discord.Interaction):
         if not await self._check_user(interaction):
             return
+        now = time.time()
+        last = _last_play.get(self.user_id, 0)
+        remaining = PLAY_COOLDOWN_SECONDS - (now - last)
+        if remaining > 0:
+            await interaction.response.send_message(
+                f"🐾 Floq já brincou bastante! Espera **{int(remaining)}s** pra brincar de novo.",
+                ephemeral=True
+            )
+            return
+        _last_play[self.user_id] = now
         db.add_happiness(self.server_id, PLAY_HAPPINESS_BOOST)
         db.set_last_happiness_update(self.server_id, int(time.time()))
         db.update_mood(self.server_id)
@@ -561,6 +642,150 @@ class GameBoyConsole(View):
         for item in self.children:
             item.disabled = True
 
+    # ── ações: home (daily/work/bark) ────────────────────────────────
+
+    async def _daily(self, interaction: discord.Interaction):
+        if not await self._check_user(interaction):
+            return
+
+        last_daily = db.get_last_daily(self.user_id)
+        remaining = _cooldown_remaining(last_daily, DAILY_COOLDOWN_SECONDS)
+        if remaining > 0:
+            await interaction.response.send_message(
+                f"😴 Floq já descansou hoje. Volta em **{_format_seconds(remaining)}**.",
+                ephemeral=True
+            )
+            return
+
+        now = int(time.time())
+        keep_streak = (
+            last_daily is not None
+            and (now - int(last_daily)) <= DAILY_COOLDOWN_SECONDS * 2
+        )
+        streak = db.bump_daily_streak(self.user_id, keep_streak)
+        bonus_pct = min(streak - 1, 20) * 5
+        bonus_coins = (DAILY_REWARD * bonus_pct) // 100
+        total_reward = DAILY_REWARD + bonus_coins
+
+        new_balance = db.update_balance(self.user_id, total_reward)
+        db.update_last_daily(self.user_id, now)
+
+        msg = f"🎁 **+{total_reward} moedas**! Saldo: {new_balance}"
+        if bonus_coins > 0:
+            msg += f"\n🔥 Streak de {streak} dias (+{bonus_pct}%)"
+
+        await interaction.response.send_message(msg, ephemeral=True)
+        await self._silent_refresh(interaction)
+
+    async def _work(self, interaction: discord.Interaction):
+        if not await self._check_user(interaction):
+            return
+
+        last_work = db.get_last_work(self.user_id)
+        remaining = _cooldown_remaining(last_work, WORK_COOLDOWN_SECONDS)
+        if remaining > 0:
+            await interaction.response.send_message(
+                f"😮‍💨 Floq está descansando do trabalho. Volta em **{_format_seconds(remaining)}**.",
+                ephemeral=True
+            )
+            return
+
+        reward = random.randint(WORK_MIN_REWARD, WORK_MAX_REWARD)
+        message = random.choice(WORK_MESSAGES)
+        new_balance = db.update_balance(self.user_id, reward)
+        db.update_last_work(self.user_id, int(time.time()))
+
+        await interaction.response.send_message(
+            f"💼 {message} **{reward} moedas**! Saldo: {new_balance}",
+            ephemeral=True
+        )
+        await self._silent_refresh(interaction)
+
+    async def _help_adventure(self, interaction: discord.Interaction):
+        if not await self._check_user(interaction):
+            return
+
+        adv = db.get_active_adventure(self.server_id)
+        if adv is None:
+            await interaction.response.send_message("🐾 Não há aventura ativa agora.", ephemeral=True)
+            return
+
+        now = time.time()
+        last = _last_help.get(self.user_id, 0)
+        remaining = HELP_COOLDOWN_SECONDS - (now - last)
+        if remaining > 0:
+            await interaction.response.send_message(
+                f"⏳ Espera **{int(remaining)}s** pra ajudar de novo!", ephemeral=True
+            )
+            return
+
+        _last_help[self.user_id] = now
+        db.contribute_adventure(adv["id"], self.user_id, HELP_CONTRIBUTION)
+        db.update_floq_memory(self.server_id, self.user_id, "ajudou o Floq numa aventura")
+
+        await interaction.response.send_message(
+            f"🐾 Você ajudou! +{HELP_CONTRIBUTION} pontos na aventura.", ephemeral=True
+        )
+        await self._silent_refresh(interaction)
+
+    async def _bark(self, interaction: discord.Interaction):
+        if not await self._check_user(interaction):
+            return
+
+        member = interaction.user
+        voice_state = getattr(member, "voice", None)
+        if voice_state is None or voice_state.channel is None:
+            await interaction.response.send_message(
+                "🐾 Entra numa call de voz primeiro! Floq não acha você. 👀", ephemeral=True
+            )
+            return
+
+        await interaction.response.defer(ephemeral=True)
+        channel = voice_state.channel
+        guild = interaction.guild
+
+        try:
+            vc = guild.voice_client
+            if vc and vc.channel != channel:
+                await vc.move_to(channel)
+            elif vc is None:
+                vc = await channel.connect()
+        except Exception as e:
+            await interaction.followup.send(f"❌ Floq escorregou tentando entrar: `{e}`", ephemeral=True)
+            return
+
+        try:
+            num_barks = random.randint(2, 4)
+            pcm_bytes = generate_bark_pcm(num_barks)
+            source = discord.PCMAudio(io.BytesIO(pcm_bytes))
+
+            done = asyncio.Event()
+
+            def _after(error):
+                self.bot.loop.call_soon_threadsafe(done.set)
+
+            vc.play(source, after=_after)
+            await done.wait()
+            await asyncio.sleep(1.0)
+        finally:
+            await vc.disconnect()
+
+        await interaction.followup.send(f"🐕 Floq entrou em **{channel.name}**, latiu e voltou correndo! 🐾", ephemeral=True)
+
+    async def _silent_refresh(self, interaction: discord.Interaction):
+        """Atualiza a mensagem do console (usado após respostas efêmeras de daily/work/ajudar)."""
+        self._build()
+        embed, file = render_screen(self.bot, self.server_id, self.user_id, self.screen, self.inv_page)
+        if self.message is None:
+            return
+        try:
+            if file:
+                await self.message.edit(embed=embed, attachments=[file], view=self)
+            else:
+                await self.message.edit(embed=embed, attachments=[], view=self)
+        except discord.HTTPException:
+            pass
+
 
 # ─────────────────────────────────────────────────────────────────────────
 # COG
@@ -583,7 +808,7 @@ class GameBoy(commands.Cog):
 
         view = GameBoyConsole(self.bot, server_id, user_id)
         embed = screen_home(server_id, user_id)
-        await ctx.send(embed=embed, view=view)
+        view.message = await ctx.send(embed=embed, view=view)
 
 
 async def setup(bot: commands.Bot) -> None:

@@ -310,6 +310,7 @@ class Mascot(commands.Cog):
             db.add_happiness(row["server_id"], -DECAY_AMOUNT)
 
     @commands.command(name="pet")
+    @commands.cooldown(1, 15, commands.BucketType.user)
     async def pet(self, ctx):
         if not ctx.guild:
             await ctx.send("Apenas em servidores.")
