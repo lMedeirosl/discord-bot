@@ -192,5 +192,5 @@ Comandos administrativos / de configuração do servidor:
 ---
 
 <div align="center">
-  Feito com ❤️ e muitos petiscos em homenagem ao <b>Floquinho</b> 🐾
+  Feito com ❤️ e muitos petiscos em homenagem ao <b>Floquinho</b> (ele tá vivo ainda tá kkkk)
 </div>
